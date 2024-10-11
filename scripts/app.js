@@ -56,19 +56,19 @@ const loadCategorypets = (category) => {
     console.log(category);
 
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
-      .then((res) => res.json())
-      .then((data) => {
-        //active class remove
-        removeActiveClass();
-  
-        //id er class k active korao
-        const activeBtn = document.getElementById(`btn-${category}`);
-        activeBtn.classList.remove("rounded-md");
-        activeBtn.classList.add("active");
-        displayPets(data.data);
-      })
-      .catch((error) => console.log(error));
-  };
+        .then((res) => res.json())
+        .then((data) => {
+            //active class remove
+            removeActiveClass();
+
+            //id er class k active korao
+            const activeBtn = document.getElementById(`btn-${category}`);
+            activeBtn.classList.remove("rounded-md");
+            activeBtn.classList.add("active");
+            displayPets(data.data);
+        })
+        .catch((error) => console.log(error));
+};
 
 const loadDetails = async (petId) => {
     // console.log(petId);
@@ -107,7 +107,7 @@ const displayDetails = (pet) => {
     detailsContainer.innerHTML = `
     <figure>
             <img class="object-cover w-full h-60 mb-5"
-            src="$${pet?.image ?? "Not available"}"
+            src="${pet?.image ?? "Not available"}"
             alt="pets" />
     </figure>
         <div class="space-y-2">
@@ -151,10 +151,11 @@ const displayPets = (pets) => {
         petContainer.classList.remove("grid");
         // add no pets found message
         petContainer.innerHTML = `
+        <section class="bg-zinc-100 p-10">
         <div class="min-h-80 w-1/2 mx-auto flex flex-col justify-center pets-center gap-5">
         <img class="w-1/2 mx-auto" src="images/error.webp" />
         <h2 class="text-4xl font-semibold text-center">No Information Available</h2>
-        <p class="text-lg text-center">It is our mission to help you find the perfect 
+        <p class="text-lg text-center text-secondary">It is our mission to help you find the perfect 
         pet for your family and to help you provide a loving home.</p>
         </div>`;
         return;
