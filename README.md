@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pet Adoption Site
 
 ## Short Description
