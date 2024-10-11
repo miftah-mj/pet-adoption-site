@@ -16,13 +16,6 @@ const loadCategories = () => {
         .then((data) => displayCategories(data.categories))
         .catch((error) => console.log(error));
 };
-// const loadCategories = async () => {
-//     const response = await fetch(
-//         "https://openapi.programming-hero.com/api/peddy/categories"
-//     );
-//     const data = await response.json();
-//     displayCategories(data.categories);
-// };
 
 // create loadpets function
 const loadPets = () => {
@@ -32,44 +25,42 @@ const loadPets = () => {
         .catch((error) => console.log(error));
 };
 
-// create loadCategorypets function
-// const loadCategorypets = (category) => {
-//     alert(category);
-//     // fetch category pets
-//     fetch(`https://openapi.programming-hero.com/api/peddy/pet/dog`)
-//         .then((response) => response.json())
-//         .then((data) => {
-//             console.log(data);
-//             removeActiveClass();
-
-//             const activeBtn = document.getElementById(`btn-${category}`);
-//             // if (activeBtn) console.log("btn activated");
-
-//             activeBtn.classList.add("active");
-//             // console.log(activeBtn);
-//             displayPets(data.category);
-//         })
-//         .catch((error) => console.log(error));
-// };
-
+// loadCategorypets function
 const loadCategorypets = (category) => {
     console.log(category);
+
+    // Show the spinner and hide the grid container
+    const spinner = document.getElementById("spinner");
+    const gridContainer = document.getElementById("pets");
+    spinner.classList.remove("hidden");
+    gridContainer.classList.add("hidden");
 
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
         .then((res) => res.json())
         .then((data) => {
+            // Hide the spinner after 2 seconds and show the grid container
+            setTimeout(() => {
+                spinner.classList.add("hidden");
+                gridContainer.classList.remove("hidden");
+            }, 2000);
+
             //active class remove
             removeActiveClass();
 
             //id er class k active korao
             const activeBtn = document.getElementById(`btn-${category}`);
-            activeBtn.classList.remove("rounded-md");
             activeBtn.classList.add("active");
             displayPets(data.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+            console.log(error);
+            // Hide the spinner and show the grid container immediately if there's an error
+            spinner.classList.add("hidden");
+            gridContainer.classList.remove("hidden-grid");
+        });
 };
 
+// loadDetails function
 const loadDetails = async (petId) => {
     // console.log(petId);
     const uri = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
