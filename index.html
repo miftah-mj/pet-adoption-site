@@ -20,6 +20,7 @@
                 extend: {
                     colors: {
                         primary: '#0e7a81',
+                        secondary: '#5a5a5a',
                     },
                     fontFamily: {
                         lato: ['Lato', 'sans-serif'],
@@ -32,6 +33,7 @@
 
 <body class="font-lato">
     <header>
+        <!-- Navbar -->
         <nav class="w-11/12 mx-auto">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
@@ -44,7 +46,7 @@
                             </svg>
                         </div>
                         <ul tabindex="0"
-                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black/65">
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow secondary">
                             <li><a>Home</a></li>
                             <li><a>Shop</a></li>
                             <li><a>Contact</a></li>
@@ -55,7 +57,7 @@
                         <span class="font-extrabold">Peddy</span></a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                    <ul class="menu menu-horizontal px-1 text-black/65">
+                    <ul class="menu menu-horizontal px-1 secondary">
                         <li><a>Home</a></li>
                         <li><a>Shop</a></li>
                         <li><a>Contact</a></li>
@@ -72,6 +74,24 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Hero Section -->
+        <div class="w-11/12 mx-auto mt-10">
+            <!-- text content -->
+            <div class="w-1/2 mx-auto text-center space-y-6">
+                <h3 class="text-xl text-secondary font-bold capitalize">Bringing families together ❤️‍🔥</h3>
+                <h1 class="text-5xl font-extrabold">Your Path to Adoption Starts Here</h1>
+                <p class="text-lg  text-secondary">
+                    It is our mission to help you find the perfect pet for your family and to help you provide a loving home.
+                </p>
+                <button class="btn bg-primary text-white px-6 hover:bg-teal-800">View More</button>
+            </div>
+
+            <!-- image content -->
+            <div class="">
+                <img class="w-1/2 mx-auto" src="images/pet.webp" alt="">
+            </div>
+        </div>
     </header>
 
 
