@@ -34,6 +34,12 @@
             }
         }
     </script>
+    <style>
+        .active {
+            background-color: rgb(145, 205, 207);
+            color: white;
+        }
+    </style>
 </head>
 
 <body class="font-lato">
@@ -110,8 +116,8 @@
                     home. We have a variety of animals available for adoption, including dogs, cats, rabbits, and more.
                 </p>
             </div>
-
-            <div id="categories" class="py-3 md:flex grid grid-cols-2 gap-10 justify-center items-baseline">
+            <!-- categories -->
+            <div id="category" class="py-3 md:flex grid grid-cols-2 gap-10 justify-center items-baseline">
             </div>
         </section>
 
@@ -122,13 +128,39 @@
                 <button class="btn bg-primary text-white px-6 hover:bg-teal-800">Sort by Price</button>
             </div>
 
-            <!-- pets container -->
-            <div id="pets" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10">
+
+            <div class="flex gap-4 py-10">
+                <!-- pets container -->
+                <div id="pets" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- <div id="likes" class="order-4 border row-span-full">
+                </div> -->
+                    <!-- pet card -->
+                </div>
+
+                <!-- likes container -->
+                <div id="likes" class="w-1/3 border rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                </div>
 
             </div>
-            <!-- pet card -->
         </section>
     </main>
+
+
+
+    <!-- Open the modal using ID.showModal() method -->
+    <button id="showModal-btn" class="hidden btn" onclick="customModal.showModal()">open modal</button>
+    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modal-content">
+            </div>
+            <div class="modal-action justify-center">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-wide btn-outline">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
 
     <!-- javascript -->
