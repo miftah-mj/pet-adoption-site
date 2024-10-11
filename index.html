@@ -11,6 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- DaisyUI cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -97,7 +102,7 @@
 
     <main>
         <!-- adopt section -->
-        <section class="w-11/12 mx-auto space-y-5">
+        <section class="w-11/12 mx-auto space-y-10">
             <div class="md:w-1/2 mx-auto text-center">
                 <h2 class="text-2xl font-bold capitalize">adopt your best friend</h2>
                 <p class="text-secondary">
@@ -106,10 +111,22 @@
                 </p>
             </div>
 
-            <div id="categories" class="py-3 flex gap-10 justify-center items-baseline">
+            <div id="categories" class="py-3 md:flex grid grid-cols-2 gap-10 justify-center items-baseline">
+            </div>
+        </section>
+
+
+        <section class="w-11/12 mx-auto">
+            <div class="flex justify-between mb-5">
+                <h4 class="text-xl font-bold capitalize text-center">Best deal for you</h4>
+                <button class="btn bg-primary text-white px-6 hover:bg-teal-800">Sort by Price</button>
             </div>
 
-            
+            <!-- pets container -->
+            <div id="pets" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10">
+
+            </div>
+            <!-- pet card -->
         </section>
     </main>
 
